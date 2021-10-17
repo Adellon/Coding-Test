@@ -1,0 +1,601 @@
+
+# n=1
+# while n!=0:
+#   n=int(input())
+#   if n!=0:
+#     print(n)
+
+
+# n = int(input())
+# while n!=0:
+#   print(n)
+#   n -= 1
+
+
+# c = ord(input())
+# t = ord('a')
+# while t<=c :
+#   print(chr(t), end=' ')
+#   t += 1
+
+# n = int(input())
+# t = 0
+# while t<=n:
+#   print(t)
+#   t += 1
+
+# n = int(input())
+# for i in range(n+1):
+#   print(i)
+
+
+# 입력한 정수까지의 짝수의 합
+
+# n = int(input())
+# s = 0
+
+# for i in range(1, n+1):
+#   if i%2 == 0:
+#     s += i
+
+# print(s)
+
+# 영문 소문자 'q'가 입력될 때까지
+# 입력한 문자를 계속 출력하는 프로그램을 작성해보자.
+
+# s=0
+# while s!='q':
+#   s = input()
+#   print(s)
+
+# 1, 2, 3 ... 을 계속 더해 나갈 때,
+# 그 합이 입력한 정수(0 ~ 1000)보다 같거나 작을 때까지만
+# 계속 더하는 프로그램을 작성해보자.
+
+# 즉, 1부터 n까지 정수를 계속 더해 나간다고 할 때,
+# 어디까지 더해야 입력한 수보다 같거나 커지는 지를 알아보고자하는 문제이다.
+
+# n = int(input())
+# s = 0
+# i = 1
+
+# while s<n:
+#   s += i
+#   i += 1
+
+# print(i-1)
+
+# 1부터 n까지, 1부터 m까지 숫자가 적힌 서로 다른 주사위 2개를 던졌을 때,
+# 나올 수 있는 모든 경우를 출력해보자.
+
+# 예시
+# ...
+# for i in range(1, n+1) :
+#   for j in range(1, m+1) :
+#     print(i, j)
+# ...
+
+# 풀이
+# n,m = input().split()
+# n=int(n)
+# m=int(m)
+
+# for i in range(1, n+1):
+#   for j in range(1, m+1):
+#     print(i, j)
+
+
+# 16진수(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F)를 배운
+# 영일이는 16진수끼리 곱하는 16진수 구구단?에 대해서 궁금해졌다.
+
+# A, B, C, D, E, F 중 하나가 입력될 때,
+# 1부터 F까지 곱한 16진수 구구단의 내용을 출력해보자.
+# (단, A ~ F 까지만 입력된다.)
+
+# 예시
+# ...
+#   print('%X'%n, '*%X'%i, '=%X'%(n*i), sep='')
+# ...
+
+# 참고
+# print('%X'%n)    #n에 저장되어있는 값을 16진수(hexadecimal) 형태로 출력
+# 작은 따옴표 2개를 사용해서 print(..., sep='') 으로 출력하면, 공백없이 모두 붙여 출력된다.
+# 작은 따옴표 2개 '' 또는 큰 따옴표 2개 "" 는 아무 문자도 없는 빈문자열(empty string)을 의미한다.
+
+# 풀이
+# n=input()
+# n=int(n, 16)
+
+# for i in range(1, 16):
+#   print('%X'%n, '*%X'%i, '=%X'%(n*i), sep='')
+
+# 만약 3, 6, 9 가 들어간 수를 자신이 불러야 하는 상황이라면, 수를 부르는 대신 "박수(X)" 를 쳐야 한다.
+# 33과 같이 3,6,9가 두 번 들어간 수 일때, "짝짝"과 같이 박수를 두 번 치는 형태도 있다. 
+
+# 참고 
+# ...
+# for i in range(1, n+1) :
+#   if i%10==3 :
+#     print("X", end=' ')    #출력 후 공백문자(빈칸, ' ')로 끝냄
+
+# 풀이
+# n = int(input())
+
+# for i in range(1, n+1):
+#   if i%10 == 3 :
+#     print('X', end=' ' )
+#   elif i%10 == 6 :
+#     print('X', end=' ' )
+#   elif i%10 == 9 :
+#     print('X', end=' ' )
+#   else:
+#     print(i, end=' ')
+
+# rgb 표현방식
+# (0, 0, 0) ~ (r-1, g-1, b-1) / n개
+
+# r,g,b = map(int, input().split())
+# n = 0
+
+# for i in range(r):
+#   for j in range(g):
+#     for k in range(b):
+#       print(i, j ,k)
+#       n += 1
+# print(n)
+
+# 소리파일 저장용량 계산하기
+# Hz, Bit, Channel수, Second의 곱
+
+# h,b,c,s = map(int, input().split())
+
+# data = h*b*c*s
+# mb = 8*(2**10)*(2**10)
+
+# print(format(data/mb, ".1f"), end=' MB')
+
+# rgb 픽셀 해상도에 대해 필요 저장공간 구하기
+
+# w,h,b=map(int, input().split())
+
+# data = w*h*b
+# mb = 8*(2**10)*(2**10)
+
+# print(format(data/mb, ".2f"), end=' MB')
+
+# 1, 2, 3 ... 을 순서대로 계속 더해 합을 만드는데,
+# 그 합이 입력한 정수보다 작을 동안만 계속 더하는 프로그램을 작성해보자.
+
+# 즉, 1부터 n까지 정수를 하나씩 더해 합을 만드는데,
+# 어디까지 더해야 입력한 수보다 같거나 커지는지 알아보고자 하는 문제이다.
+
+# 하지만, 이번에는 그 때 까지의 합을 출력해야 한다.
+
+# 예를 들어, 57을 입력하면
+# 1+2+3+...+8+9+10=55에서 그 다음 수인 11을 더해 66이 될 때,
+# 그 값 66이 출력되어야 한다.
+
+# 예시
+# ...
+# while True :
+#   s += c
+#   c += 1
+#   if s>=n :
+#     break
+
+# print(s)
+
+# 참고
+# 조건문이나 반복문의 코드블록 안에서 break 가 실행되면,
+# 반복실행을 중단(break)하고, 가장 가까운 반복 블록의 밖으로 빠져나간다.
+
+# 풀이
+
+# n = int(input())
+# s = 0
+# c = 1
+
+# while True:
+#   s+=c
+#   c+=1
+#   if s>=n:
+#     break
+
+# print(s)
+
+
+# 1부터 입력한 정수까지 1씩 증가시켜 출력하는 프로그램을 작성하되,
+# 3의 배수인 경우는 출력하지 않도록 만들어보자.
+
+# 예를 들면,
+# 1 2 4 5 7 8 10 11 13 14 ...
+# 와 같이 출력하는 것이다.
+
+# 예시
+# ...
+# for i in range(1, n+1) :
+#   if i%2==0 :
+#     continue            #다음 반복 단계로 넘어간다.
+#   print(i, end=' ')    #i가 짝수가 아닐 때만 실행된다.
+# ...
+# 위 코드는 홀 수만 출력하는 예시이다.
+
+# 참고
+# 조건문이나 반복문의 코드블록 안에서 continue 가 실행되면,
+# 반복 블록 안에 있는 나머지 부분을 실행하지 않고, 다음 반복 단계로 넘어간다.
+# 즉, 반복 블록의 나머지 부분은 실행되지 않고, 다음 단계의 반복을 계속(continue)하는 것이다.
+
+# 풀이
+
+# n = int(input())
+
+# for i in range(1, n+1):
+#   if i%3 == 0:
+#     continue
+#   print(i, end=' ')
+
+# 등차수열
+# 입력
+# 시작 값(a), 등차의 값(d), 몇 번째 수 인지를 의미하는 정수(n)가
+# 공백을 두고 입력된다.(모두 0 ~ 100)
+
+# 출력
+# n번째 수를 출력한다.
+
+# 풀이
+
+# a,d,n = map(int, input().split())
+
+# result = a+d*(n-1)
+
+# print(result)
+
+# 등비수열
+# 입력
+# 시작 값(a), 등비의 값(r), 몇 번째 인지를 나타내는 정수(n)가
+# 공백을 두고 입력된다.(모두 0 ~ 10)
+
+# 출력
+# n번째 수를 출력한다.
+
+# a,r,n=map(int, input().split())
+
+# result = a*r**(n-1)
+
+# print(result)
+
+# 입력
+# 시작 값(a), 곱할 값(m), 더할 값(d), 몇 번째 인지를 나타내는 정수(n)가
+# 공백을 두고 입력된다.(a, m, d는 -50 ~ +50, n은 10이하의 자연수)
+
+# 출력
+# n번째 수를 출력한다.
+
+# a,m,d,n=map(int, input().split())
+
+# result = a
+# for i in range(1, n):
+#   result = m*a + d
+#   a= result
+
+# print(result)
+
+
+# 입력
+# 같은 날 동시에 가입한 인원 3명이 규칙적으로 방문하는,
+# 방문 주기가 공백을 두고 입력된다. (단, 입력값은 100이하의 자연수이다.)
+
+# 출력
+# 3명이 다시 모두 함께 방문해 문제를 풀어보는 날(동시 가입/등업 후 며칠 후?)을 출력한다.
+#  day는 날 수, a/b/c는 방문 주기이다.
+
+# 참고
+# d = 1
+# while d%a!=0 or d%b!=0 or d%c!=0 :
+#   d += 1
+# print(d)
+
+# 풀이
+
+# a,b,c=map(int, input().split())
+
+# d=1
+# while d%a!=0 or d%b!=0 or d%c!=0:
+#   d += 1
+# print(d)
+
+# n = int(input())      #개수를 입력받아 n에 정수로 저장
+# a = input().split()  #공백을 기준으로 잘라 a에 순서대로 저장
+
+# for i in range(n) :  #0부터 n-1까지...
+#   a[i] = int(a[i])       #a에 순서대로 저장되어있는 각 값을 정수로 변환해 다시 저장
+
+# d = []                     #d라는 이름의 빈 리스트 [ ] 변수를 만듦. 대괄호 기호 [  ] 를 사용한다.
+# for i in range(24) :  #[0, 0, 0, ... , 0, 0, 0] 과 같이 24개의 정수 값 0을 추가해 넣음
+#   d.append(0)        #각 값은 d[0], d[1], d[2], ... , d[22], d[23] 으로 값을 읽고 저장할 수 있음.
+
+# for i in range(n) :    #번호를 부를 때마다, 그 번호에 대한 카운트 1씩 증가
+#   d[a[i]] += 1
+
+# for i in range(1, 24) :  #카운트한 값을 공백을 두고 출력
+#   print(d[i], end=' ')
+
+# 참고
+# - d = []              #어떤 데이터 목록(list) 을 순서대로 저장하기 위해 아무것도 없는 리스트 변수 만들기
+# - d.append(값)  #d 리스트의 마지막에 원하는 값을 추가(append)해 넣음 
+# - d[a[i]] += 1     #2중 리스트 참조 : 만약 a[i]의 값이 1이었다면? d[1] += 1 이 실행되는 것이다. 1번 카운트 1개 증가..
+
+# 입력
+# 첫 번째 줄에 출석 번호를 부른 횟수인 정수 n이 입력된다. (1 ~ 10000)
+# 두 번째 줄에는 무작위로 부른 n개의 번호(1 ~ 23)가 공백을 두고 순서대로 입력된다.
+
+# 출력
+# 1번부터 번호가 불린 횟수를 순서대로 공백으로 구분하여 한 줄로 출력한다.
+
+# n = int(input())
+# a = list(map(int, input().split()))
+
+# d = [0] * 24    
+# # d[i]에서 i가 호출번호를 의미
+# # d=[]
+# # for i in range(24):
+# #     d.append(0)
+
+# for i in range(n):
+#   d[a[i]] += 1
+
+# for i in range(1, 24):
+#     print(d[i], end=' ')
+
+
+# 출석 번호를 n번 무작위로 불렀을 때, 부른 번호를 거꾸로 출력해 보자.
+
+# 예시
+# ...
+# for i in range(n-1, -1, -1) :
+#   print(a[i], end=' ')
+# ...
+
+# 참고
+# 번호를 부른 순서를 리스트에 순서대로 기록해 두었다가, 기록한 값들을 거꾸로 출력하면 된다.
+# range(시작, 끝, 증감) #시작 수는 포함, 끝 수는 포함하지 않음. [시작, 끝)
+# range(n-1, -1, -1) #n-1, n-2, ..., 3, 2, 1, 0
+
+# 입력
+# 번호를 부른 횟수(n, 1 ~ 10000)가 첫 줄에 입력된다.
+# n개의 랜덤 번호(k, 1 ~ 23)가 두 번째 줄에 공백을 사이에 두고 순서대로 입력된다.
+
+# 출력
+# 출석을 부른 번호 순서를 바꾸어 공백을 두고 출력한다.
+
+# n = int(input())
+# a = list(map(int, input().split()))
+
+# for i in range(n-1, -1, -1):
+#   print(a[i], end=' ')
+
+# 번호를 부른 횟수(n, 1 ~ 10000)가 첫 줄에 입력된다.
+# n개의 랜덤 번호(k)가 두 번째 줄에 공백을 사이에 두고 순서대로 입력된다.
+
+# 출력
+# 출석을 부른 번호 중에 가장 빠른 번호를 출력한다.
+
+# n = int(input())
+# a = list(map(int, input().split()))
+
+# # k=a[0]
+
+# # for i in range(n):
+# #     if(k>a[i]):
+# #       k=a[i]
+
+# # print(k)
+
+# a.sort()
+
+# print(a[0])
+
+# 바둑판에 돌 올리기
+# d=[]                        #대괄호 [ ] 를 이용해 아무것도 없는 빈 리스트 만들기
+# for i in range(20) :
+#   d.append([])         #리스트 안에 다른 리스트 추가해 넣기
+#   for j in range(20) : 
+#     d[i].append(0)    #리스트 안에 들어있는 리스트 안에 0 추가해 넣기
+
+# n = int(input())
+# for i in range(n) :
+#   x, y = input().split()
+#   d[int(x)][int(y)] = 1
+
+# for i in range(1, 20) :
+#   for j in range(1, 20) : 
+#     print(d[i][j], end=' ')    #공백을 두고 한 줄로 출력
+#   print()                          #줄 바꿈
+
+# 풀이
+# d=[[0 for _ in range(20)] for _ in range(20)]
+
+# n = int(input())
+# for i in range(n):
+#     x,y = map(int, input().split())
+#     if d[x][y] != 1: # 중첩금지
+#         d[x][y] += 1
+
+# for i in range(1, 20):
+#   for j in range(1, 20):
+#     print(d[i][j], end=' ')
+#   print()
+
+
+# 바둑판(19 * 19)에 흰 돌(1) 또는 검정 돌(0)이 모두 꽉 채워져 놓여있을 때,
+# n개의 좌표를 입력받아 십(+)자 뒤집기한 결과를 출력하는 프로그램을 작성해보자.
+
+# 예시
+# ...
+# for i in range(n) :
+#   x,y=input().split()
+#   for j in range(1, 20) :
+#     if d[j][int(y)]==0 :
+#       d[j][int(y)]=1
+#     else :
+#       d[j][int(y)]=0
+
+#     if d[int(x)][j]==0 :
+#       d[int(x)][j]=1
+#     else :
+#       d[int(x)][j]=0
+# ...
+
+
+## d = [[0]*19 for _ in range(19)]
+
+# 2차원 배열 입력받기!!
+# d = [list(map(int, input().split())) for _ in range(19)]
+
+# n = int(input())
+# for _ in range(n):
+#   x,y=map(int, input().split())
+#   for i in range(19):
+#     if d[x-1][i] == 0:
+#       d[x-1][i] = 1
+#     else:
+#       d[x-1][i] = 0
+
+
+#     if d[i][y-1] == 0:
+#       d[i][y-1] = 1
+#     else:
+#       d[i][y-1] = 0
+
+
+# for i in range(19):
+#   for j in range(19):
+#     print(d[i][j], end=' ')
+#   print()
+
+
+# 첫 줄에 격자판의 세로(h), 가로(w) 가 공백을 두고 입력되고,
+# 두 번째 줄에 놓을 수 있는 막대의 개수(n)
+# 세 번째 줄부터 각 막대의 길이(l), 방향(d), 좌표(x, y)가 입력된다.
+# 1 <= w, h <= 100
+# 1 <= n <= 10
+# d = 0 or 1 (0이 가로방향)
+# 1 <= x <= 100-h
+# 1 <= y <= 100-w
+
+# 출력
+# 모든 막대를 놓은 격자판의 상태를 출력한다.
+# 막대에 의해 가려진 경우 1, 아닌 경우 0으로 출력한다.
+# 단, 각 숫자는 공백으로 구분하여 출력한다.
+
+# 풀이
+
+# 좌표를 다룰 때에는 배열은 (0,0) 시작임을 잊지마세요.
+# h,w = map(int, input().split())
+
+# A = [[0]*(w+1) for _ in range(h+1)]
+
+# n = int(input())
+# for _ in range(n):
+#   l,d,x,y=map(int, input().split())
+#   if d == 0:
+#     for i in range(l):
+#       A[x][y+i] = 1
+#   else:
+#     for i in range(l):
+#       A[x+i][y] = 1
+
+# for i in range(1, h+1):
+#   for j in range(1, w+1):
+#     print(A[i][j], end=' ')
+#   print()   
+
+#개미는 오른쪽으로 움직이다가 벽을 만나면 아래쪽으로 움직여 가장 빠른 길로 움직였다.
+#(오른쪽에 길이 나타나면 다시 오른쪽으로 움직인다.)
+# 미로 상자에 넣은 개미는 먹이를 찾았거나, 더 이상 움직일 수 없을 때까지
+# 오른쪽 또는 아래쪽으로만 움직였다.
+
+# 미로 상자의 구조가 0(갈 수 있는 곳), 1(벽 또는 장애물)로 주어지고,
+# 먹이가 2로 주어질 때, 성실한 개미의 이동 경로를 예상해보자.
+
+# 단, 맨 아래의 가장 오른쪽에 도착한 경우, 더 이상 움직일 수 없는 경우, 먹이를 찾은 경우에는
+# 더이상 이동하지 않고 그 곳에 머무른다고 가정한다.
+
+# 미로 상자의 테두리는 모두 벽으로 되어 있으며,
+# 개미집은 반드시 (2, 2)에 존재하기 때문에 개미는 (2, 2)에서 출발한다.
+
+# 입력
+# 10*10 크기의 미로 상자의 구조와 먹이의 위치가 입력된다.
+
+# 출력
+# 성실한 개미가 이동한 경로를 9로 표시해 출력한다.
+
+# 이동원리 우선, 먹이가 최우선이 아님
+
+# maze = [list(map(int, input().split())) for _ in range(10)]
+
+# x=1
+# y=1
+
+# while 1:
+#   if (maze[x][y+1] == 1 and maze[x+1][y] ==1):
+#     break
+
+#   if maze[x][y+1] == 0:
+#     maze[x][y] = 9
+#     y += 1
+#   elif maze[x+1][y] == 0 and maze[x][y+1] != 2:
+#     maze[x][y] = 9
+#     x += 1
+#   elif maze[x][y+1] == 2:     # 먹이 위치가 최우선사항이 아니고, 이동 원리가 우선임.
+#     maze[x][y] = 9
+#     y += 1
+#     break
+#   elif maze[x+1][y] == 2:
+#     maze[x][y] = 9
+#     x += 1
+#     break
+
+# maze[x][y] = 9
+
+# for i in range(10):
+#   for j in range(10):
+#     print(maze[i][j], end=' ')
+#   print()
+
+#먹이 최우선
+'''
+maze = [list(map(int, input().split())) for _ in range(10)]
+
+x=1
+y=1
+
+while 1:
+  if (maze[x][y+1] == 1 and maze[x+1][y] ==1):
+    break
+  if maze[x][y+1] == 2:
+    maze[x][y] = 9
+    y += 1
+    break
+  elif maze[x+1][y] == 2:
+    maze[x][y] = 9
+    x += 1
+    break
+
+
+  if maze[x][y+1] == 0:
+    maze[x][y] = 9
+    y += 1
+  elif maze[x+1][y] == 0:
+    maze[x][y] = 9
+    x += 1
+
+maze[x][y] = 9
+
+for i in range(10):
+  for j in range(10):
+    print(maze[i][j], end=' ')
+  print()
+  '''
+
+  
